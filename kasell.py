@@ -1,14 +1,22 @@
+"""
+kasell.py
+
+A script for helping track scores in video games.  Currently works on
+stills extracted from a Puyo Puyo Tetris video.  There's not a lot
+to it at this point.
+"""
+
+from glob import glob
+
 import pytesseract
 from PIL import Image, ImageOps
-from sys import argv
-from glob import glob
 
 def ppt(fname):
     """Process a file supplied in fname.  File is assumed to be an image from
     a video of Puyo Puyo Tetris.  A region of the screen is cropped and
     fed into pytesseract, and an integer is returned.  For this function,
     the region of the screen is (769, 464) to (955, 496) -- where
-    Puyo Puyo Tetrus keeps the score."""
+    Puyo Puyo Tetris keeps the score."""
 
     # load the image through PIL
     original = Image.open(fname)
@@ -32,10 +40,14 @@ def ppt(fname):
     # done
     return output
 
-# testing
-outfile = open('output.txt', 'w')
-files = glob('work/test*.png')
-files.sort()
-for still in files:
-    print(ppt(still), file=outfile)
+def test():
+    """Quick and dirty test function as a proof of concept."""
+    outfile = open('output.txt', 'w')
+    files = glob('work/test*.png')
+    files.sort()
+    for still in files:
+        print(ppt(still), file=outfile)
 
+# testing
+if __name__ == '__main__':
+    test()
