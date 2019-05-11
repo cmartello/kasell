@@ -1,20 +1,20 @@
-KASELL
+#KASELL
 
 A project for extracting scores from videos of video games.
 Named in honor of Carl Kasell of "Wait, Wait, Don't Tell Me..." fame.
 
-REQUIREMENTS
+##REQUIREMENTS
 
-For this script:
+###For this script:
 * python3
 * pytesseract
 * PIL
 
-Other things needed to actually make use of this script:
+###Other things needed to actually make use of this script:
 * ffmpeg
 * youtube-dl
 
-USAGE
+##USAGE
 
 Not suggested at all :)  It literally does one thing right now and needs further work.
 
